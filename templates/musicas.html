@@ -14,19 +14,18 @@
 <body>
     <h2>Músicas de {{ usuario }}</h2>
 
-    <!-- Formulário para adicionar nova música -->
     <form method="POST">
         <input type="text" name="musica" placeholder="Nova música" required>
         <button type="submit">Adicionar</button>
     </form>
 
-    <!-- Formulário de busca -->
+
     <form method="GET" action="{{ url_for('gerenciar_musicas') }}">
         <input type="text" name="busca" placeholder="Buscar música" value="{{ busca or '' }}">
         <button type="submit">Buscar</button>
     </form>
 
-    <!-- Lista de músicas -->
+
     <ul>
         {% for musica in musicas %}
             <li>
