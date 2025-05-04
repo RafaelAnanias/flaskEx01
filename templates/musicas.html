@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Músicas</title>
+    <style>
+        * {
+            text-align: center;
+            background-color: darkgrey;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Músicas de {{ usuario }}</h2>
+
+    <!-- Formulário para adicionar nova música -->
+    <form method="POST">
+        <input type="text" name="musica" placeholder="Nova música" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Formulário de busca -->
+    <form method="GET" action="{{ url_for('gerenciar_musicas') }}">
+        <input type="text" name="busca" placeholder="Buscar música" value="{{ busca or '' }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Lista de músicas -->
+    <ul>
+        {% for musica in musicas %}
+            <li>
+                {{ musica }}
+                [<a href="{{ url_for('editar_musica', index=loop.index0) }}">Editar</a>]
+                [<a href="{{ url_for('remover_musica', index=loop.index0) }}">Remover</a>]
+            </li>
+        {% else %}
+            <li>Nenhuma música encontrada.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('dashboard') }}">Voltar</a> |
+    <a href="{{ url_for('logout') }}">Sair</a>
+</body>
+</html>

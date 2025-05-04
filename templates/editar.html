@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Música</title>
+    <style>
+        * {
+            text-align: center;
+            background-color: darkgrey;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Editar música</h2>
+
+    <form method="POST">
+        <input type="text" name="nova_musica" value="{{ musica }}" required>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <a href="{{ url_for('gerenciar_musicas') }}">Cancelar</a>
+</body>
+</html>
