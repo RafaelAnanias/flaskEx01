@@ -29,4 +29,4 @@ Para rodar o projeto é necessário:
 
 4º Instalar o Flask: pip install Flask
 
-5º rodar o projeto: flask --app hello run --debug
+5º rodar o projeto: flask --app ex01 run --debug
