@@ -18,3 +18,15 @@ Para gerar gerar o arquivo de dependências digitei esse código no terminal:
 pip freeze > requirements.txt
 
 Após seguir essas instruções a atividade foi concluída com sucesso!
+
+Para rodar o projeto é necessário:
+
+1º Clonar o repositório
+
+2º Criar um ambiente virtual com o comando: py -3 -m venv .venv
+
+3º Ativar o ambiente: .venv\Scripts\activate
+
+4º Instalar o Flask: pip install Flask
+
+5º rodar o projeto: flask --app hello run --debug
